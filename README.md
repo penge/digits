@@ -70,7 +70,7 @@ You can use one-digit for the numbers, or you can stick to div or span elements 
 Which numbers (`.hundreds`, `.tens`, and so on) you'd like to display, it's up to you. They all are optional.
 The `.stopwatch` and `.buttons` classes are optional as well. And `button` elements don't have to be buttons either.
 
-As you can see, stopwatch has a `data-delay` attribute. It is used the set the update speed.
+As you can see, stopwatch has a `data-delay` attribute. It is used to set the update speed.
 By default it is 1000. That corresponds to updates every 1 second.
 
 That's all there is to it! Enjoy & share!
