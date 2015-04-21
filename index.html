@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Digits</title>
+    <style>
+      
+      /* Page styles */
+      
+      body {
+        -webkit-user-select: none;
+        user-select: none;
+        font-family: Arial;
+        margin: 50px;
+      }
+      
+      #credits {
+        position: fixed;
+        right: 0px;
+        top: 50px;
+      }
+      
+      #credits a {
+        display: block;
+        padding: 30px;
+        font-size: 20px;
+        color: white;
+        background: black;
+        text-decoration: none;
+      }
+      
+      .example {
+        margin: 0 0 100px 0;
+      }
+      
+      
+      /* Overriding one-digit's size and color */
+      
+      #answer one-digit::shadow .block { width: 15px; height: 20px; }
+      #answer one-digit::shadow .block.active { background: palevioletred; }
+      
+      #narrow one-digit::shadow .block { width: 5px; height: 20px; }
+      #narrow one-digit::shadow .block.active { background: skyblue; }
+      
+      #wide one-digit::shadow .block { width: 20px; height: 5px; }
+      
+      #gradient one-digit::shadow .block { width: 15px; height: 15px; }
+      #gradient one-digit::shadow .block.active { background: lightcoral; }
+      #gradient one-digit::shadow .block.active:nth-child(2) { opacity: .9; }
+      #gradient one-digit::shadow .block.active:nth-child(3) { opacity: .8; }
+      #gradient one-digit::shadow .block.active:nth-child(4) { opacity: .6;}
+      
+      
+      /* Using own element, div or span, for stopwatch */
+      
+      #stopwatch-full-classic .digits { font-size: 80px; color: burlywood; }
+      #stopwatch-full-classic .digits .digit { display: inline-block; margin-right: -20px; }
+      #stopwatch-full-classic .digits .digit.decimal { font-size: 50%; }
+      
+    </style>
+  </head>
+  
+  <body>
+    <div id="credits">
+      <a href="https://github.com/penge/digits" target="_blank">GitHub</a>
+    </div>
+    
+    <h1>42</h1>
+    <section class="example" id="answer">      
+      <one-digit data-value="4"></one-digit>
+      <one-digit data-value="2"></one-digit>
+    </section>
+    
+    <h1>Static</h1>
+    <section class="example" id="static">
+      <one-digit data-value="1"></one-digit>
+      <one-digit data-value="2"></one-digit>
+      <one-digit data-value="3"></one-digit>
+      <one-digit data-value="4"></one-digit>
+      <one-digit data-value="5"></one-digit>
+      <one-digit data-value="6"></one-digit>
+      <one-digit data-value="7"></one-digit>
+      <one-digit data-value="8"></one-digit>
+      <one-digit data-value="9"></one-digit>
+      <one-digit data-value="0"></one-digit>
+    </section>
+    
+    <h1>Tiny</h1>
+    <section class="example stopwatch" id="stopwatch-tiny">
+      <one-digit class="tens" data-size="4"></one-digit>
+      <one-digit class="ones" data-size="4"></one-digit>
+    </section>
+    
+    <h1>Medium</h1>
+    <section class="example stopwatch" id="stopwatch-medium">
+      <one-digit class="tens" data-size="20"></one-digit>
+      <one-digit class="ones" data-size="20"></one-digit>
+    </section>
+    
+    <h1>Huge</h1>
+    <section class="example stopwatch" id="stopwatch-huge">
+      <one-digit class="tens" data-size="50"></one-digit>
+      <one-digit class="ones" data-size="50"></one-digit>
+    </section>
+    
+    <h1>Gigantic</h1>
+    <section class="example stopwatch" id="stopwatch-gigantic">
+      <one-digit class="tens" data-size="90"></one-digit>
+      <one-digit class="ones" data-size="90"></one-digit>
+    </section>
+    
+    <h1>Emphasized</h1>
+    <section class="example stopwatch" id="stopwatch-emphasized">
+      <one-digit class="tens" data-size="30"></one-digit>
+      <one-digit class="ones" data-size="6"></one-digit>
+    </section>
+    
+    <h1>Colored</h1>
+    <section class="example stopwatch" id="stopwatch-colored" data-delay="100">
+      <one-digit class="tens" data-color="dimgrey" data-size="30"></one-digit>
+      <one-digit class="ones" data-color="lightgrey" data-size="30"></one-digit>
+      <one-digit class="tenths" data-color="indianred" data-size="6"></one-digit>
+    </section>
+    
+    <h1>Full</h1>
+    <section class="example stopwatch" id="stopwatch-full" data-delay="10">
+      <one-digit class="hundreds" data-size="30"></one-digit>
+      <one-digit class="tens" data-size="30"></one-digit>
+      <one-digit class="ones" data-size="30"></one-digit>
+      <one-digit class="tenths" data-size="6"></one-digit>
+      <one-digit class="hundredths" data-size="6"></one-digit>
+      
+      <div class="buttons">
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+        <button class="reset">Reset</button>
+      </div>
+    </section>
+    
+    <h1>Classic</h1>
+    <section class="example stopwatch" id="stopwatch-full-classic" data-delay="10">
+      <div class="digits">
+        <div class="hundreds digit"></div>
+        <div class="tens digit"></div>
+        <div class="ones digit"></div>
+        <div class="tenths digit decimal"></div>
+        <div class="hundredths digit decimal"></div>
+      </div>
+      
+      <div class="buttons">
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+        <button class="reset">Reset</button>
+      </div>
+    </section>
+    
+    <h1>Narrow</h1>
+    <section class="example" id="narrow">
+      <one-digit data-value="1"></one-digit>
+      <one-digit data-value="2"></one-digit>
+      <one-digit data-value="3"></one-digit>
+      <one-digit data-value="4"></one-digit>
+      <one-digit data-value="5"></one-digit>
+      <one-digit data-value="6"></one-digit>
+      <one-digit data-value="7"></one-digit>
+      <one-digit data-value="8"></one-digit>
+      <one-digit data-value="9"></one-digit>
+      <one-digit data-value="0"></one-digit>
+    </section>
+    
+    <h1>Wide</h1>
+    <section class="example" id="wide">
+      <one-digit data-value="1"></one-digit>
+      <one-digit data-value="2"></one-digit>
+      <one-digit data-value="3"></one-digit>
+      <one-digit data-value="4"></one-digit>
+      <one-digit data-value="5"></one-digit>
+      <one-digit data-value="6"></one-digit>
+      <one-digit data-value="7"></one-digit>
+      <one-digit data-value="8"></one-digit>
+      <one-digit data-value="9"></one-digit>
+      <one-digit data-value="0"></one-digit>
+    </section>
+    
+    <h1>Gradient</h1>
+    <section class="example" id="gradient">
+      <one-digit data-value="1"></one-digit>
+      <one-digit data-value="2"></one-digit>
+      <one-digit data-value="3"></one-digit>
+      <one-digit data-value="4"></one-digit>
+      <one-digit data-value="5"></one-digit>
+      <one-digit data-value="6"></one-digit>
+      <one-digit data-value="7"></one-digit>
+      <one-digit data-value="8"></one-digit>
+      <one-digit data-value="9"></one-digit>
+      <one-digit data-value="0"></one-digit>
+    </section>
+    
+    <script src="one-digit.js"></script>
+    <script src="stopwatch.js"></script>
+    <script>
+      var stopwatches = document.querySelectorAll(".stopwatch");
+      for (var i = 0; i < stopwatches.length; i++) {
+        var id = stopwatches[i].getAttribute("id");
+        new Stopwatch(id).start();
+      }
+    </script>
+  </body>
+</html>
